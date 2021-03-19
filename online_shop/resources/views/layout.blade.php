@@ -246,21 +246,6 @@
     </div>
     <!-- End Top Search -->
 
-    <!-- Start All Title Box -->
-    <div class="all-title-box">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>ABOUT US</h2>
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">ABOUT US</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End All Title Box -->
     <div>@yield('content')</div>
      <!-- Start Instagram Feed  -->
      <div class="instagram-box">
@@ -429,7 +414,7 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/baguetteBox.min.js"></script>
     <script src="js/form-validator.min.js"></script>
-    <script src="js/contact-form-script.js"></script>
+    <!-- <script src="js/contact-form-script.js"></script> -->
     <script src="js/custom.js"></script>
 </body>
 

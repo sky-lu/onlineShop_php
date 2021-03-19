@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\TestController;
+
 
 
 
@@ -21,3 +24,6 @@ Route::get('/', function () {
 });
 
 Route::get('/about', [AboutController::class, 'index']);
+Route::get('/contact', [ContactController::class, 'index']);
+Route::post('/contact/add', [ContactController::class, 'addFeedback']);
+
