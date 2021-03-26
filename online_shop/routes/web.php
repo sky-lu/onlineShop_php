@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\TestController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\MyAccountController;
 
 
 
@@ -26,4 +27,5 @@ Route::get('/', function () {
 Route::get('/about', [AboutController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
 Route::post('/contact/add', [ContactController::class, 'addFeedback']);
-
+Route::get('/service', [ServiceController::class, 'index']);
+Route::get('/myaccount', [MyAccountController::class, 'index']);
