@@ -1,4 +1,4 @@
-@extends('layout');
+@extends('layout')
 @section('content')
  <!-- Start All Title Box -->
  <div class="all-title-box">

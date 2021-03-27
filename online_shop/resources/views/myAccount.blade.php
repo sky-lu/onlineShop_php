@@ -1,4 +1,4 @@
-@extends('layout');
+@extends('layout')
 @section('content')
      <!-- Start All Title Box -->
      <div class="all-title-box">
@@ -42,20 +42,30 @@
                         <h3>Create New Account</h3>
                     </div>
                     <h5><a data-toggle="collapse" href="#formRegister" role="button" aria-expanded="false">Click here to Register</a></h5>
-                    <form class="mt-3 collapse review-form-box" id="formRegister">
+                    <form class="mt-3 collapse review-form-box" id="formRegister" method="post" action="/myaccount/signup">
+                        @CSRF
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="InputName" class="mb-0">First Name</label>
-                                <input type="text" class="form-control" id="InputName" placeholder="First Name"> </div>
+                                <input type="text" class="form-control" id="InputName" name="fname" placeholder="First Name"> </div>
                             <div class="form-group col-md-6">
                                 <label for="InputLastname" class="mb-0">Last Name</label>
-                                <input type="text" class="form-control" id="InputLastname" placeholder="Last Name"> </div>
+                                <input type="text" class="form-control" id="InputLastname" name="lname" placeholder="Last Name"> </div>
                             <div class="form-group col-md-6">
                                 <label for="InputEmail1" class="mb-0">Email Address</label>
-                                <input type="email" class="form-control" id="InputEmail1" placeholder="Enter Email"> </div>
+                                <input type="email" class="form-control" id="InputEmail1" name="email" placeholder="Enter Email"> </div>
                             <div class="form-group col-md-6">
                                 <label for="InputPassword1" class="mb-0">Password</label>
-                                <input type="password" class="form-control" id="InputPassword1" placeholder="Password"> </div>
+                                <input type="password" class="form-control" id="InputPassword1" name="password" placeholder="Password"> </div>
                         </div>
                         <button type="submit" class="btn hvr-hover">Register</button>
                     </form>
