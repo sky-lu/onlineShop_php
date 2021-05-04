@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateAccountRequest;
+use App\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class MyAccountController extends Controller
 {
@@ -22,8 +24,23 @@ class MyAccountController extends Controller
         $user->password = Hash :: make($request->password);
         
         $user->save();
-        // dump($user);
-        // exit();
+        
 
+    }
+
+    function login(LoginRequest $request){
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('about');
+        }
+
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ]);
+       
+        
     }
 }

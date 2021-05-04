@@ -30,3 +30,4 @@ Route::post('/contact/add', [ContactController::class, 'addFeedback']);
 Route::get('/service', [ServiceController::class, 'index']);
 Route::get('/myaccount', [MyAccountController::class, 'index']);
 Route::post('/myaccount/signup', [MyAccountController::class, 'signup']);
+Route::post('/myaccount/login', [MyAccountController::class, 'login']);

@@ -4,9 +4,9 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateAccountRequest extends FormRequest
+class LoginRequest extends FormRequest
 {
-    protected $errorBag = 'signup';
+    protected $errorBag = 'login';
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -25,13 +25,10 @@ class CreateAccountRequest extends FormRequest
     public function rules()
     {
         return [
-            'fname' => ['required', 'max:50'],
-            'lname' => ['required', 'max:50'],
             'email' => ['required', 'max:200', 'email:rfc,dns'],
-            'password' => ['required', 'max:50', 'confirmed'],
-            //'password_confirmation' => ['required', 'max:50'],
+            'password' => ['required', 'max:50'],
         ];
     }
 
-   
+    
 }
