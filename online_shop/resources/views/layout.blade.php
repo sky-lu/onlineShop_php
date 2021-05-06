@@ -74,13 +74,28 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="custom-select-box">
-                        <select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
-						<option>¥ JPY</option>
-						<option>$ USD</option>
-						<option>€ EUR</option>
-					</select>
+                @if(Auth::check())
+                    <!-- <div class="custom-select-box">
+                        <select id="basic" class="selectpicker show-tick form-control">
+                            <option>{{session('user')->fname}}</option>
+                            <option>logout</option>
+					    </select>
+                    </div> -->
+                    <div class="our-link text-danger">
+                        <span>&nbsp&nbsp&nbsp&nbsp</span>
+                        <a href="#" class="text-danger">{{session('user')->fname}}</a>
+                        <span> / </span>
+                        <a href="myaccount/logout" class="text-danger">Logout</a>
                     </div>
+
+                @else
+                    <div class="our-link text-danger">
+                        <span>&nbsp&nbsp&nbsp&nbsp</span>
+                        <a href="myaccount" class="text-danger">Login</a>
+                        <span> / </span>
+                        <a href="myaccount" class="text-danger">Register</a>
+                    </div>
+                @endif 
                     <div class="right-phone-box">
                         <p>Call US :- <a href="#"> +11 900 800 100</a></p>
                     </div>

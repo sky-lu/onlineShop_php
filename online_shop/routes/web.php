@@ -31,3 +31,4 @@ Route::get('/service', [ServiceController::class, 'index']);
 Route::get('/myaccount', [MyAccountController::class, 'index']);
 Route::post('/myaccount/signup', [MyAccountController::class, 'signup']);
 Route::post('/myaccount/login', [MyAccountController::class, 'login']);
+Route::get('/myaccount/logout',[MyAccountController::class, 'logout']);
